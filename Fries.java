@@ -21,6 +21,15 @@ public class Fries extends Actor
             resetFries();
         }
         
+        if(isTouching(Hero.class))
+        {
+            // Add a game over symbol  
+            DeadFace deadface = new DeadFace();
+            getWorld().addObject(deadface,300, 200); 
+            getWorld().removeObject(this);
+            
+        }
+        
     }
     
     public void resetFries()
